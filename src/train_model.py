@@ -23,4 +23,8 @@ def train_and_save():
     model.fit(X_train, y_train)
 
     joblib.dump(model, "models/model.joblib")
+    joblib.dump(imputer, "models/imputer.joblib")
+    joblib.dump(list(numeric_cols), "models/numeric_cols.joblib")
 
+if __name__ == "__main__":
+    train_and_save()
